@@ -39,4 +39,6 @@ for y in range(0, height, size):
 
 res = Image.fromarray(array)
 res.save(name)
+print('Ширина ' + str(width))
+print('Высота ' + str(height))
 print("Время выполнения: {:.2f}s".format(time.time() - start_time))

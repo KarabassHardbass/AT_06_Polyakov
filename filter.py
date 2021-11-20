@@ -1,12 +1,17 @@
 from PIL import Image
 import numpy as np
+import time
 
 print('Картинка')
 img = Image.open(input())
+print('Сохранить как')
+name = input()
 print('Серый цвет')
 modifier = int(input())
 print('Размер')
 size = int(input())
+
+start_time = time.time()
 
 array = np.array(img)
 height = len(array)
@@ -33,4 +38,5 @@ for y in range(0, height, size):
         fill_array(x, y, find_grayscale(x, y))
 
 res = Image.fromarray(array)
-res.save('res.jpg')
+res.save(name)
+print("Время выполнения: {:.2f}s".format(time.time() - start_time))
